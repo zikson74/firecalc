@@ -203,7 +203,7 @@ export function CalculatorSection() {
                       <Pie data={pieData} cx="50%" cy="50%" innerRadius={70} outerRadius={110} paddingAngle={3} dataKey="value" animationBegin={0} animationDuration={600}>
                         {pieData.map((entry, i) => <Cell key={i} fill={entry.color} stroke="transparent"/>)}
                       </Pie>
-                      <Tooltip formatter={(v: number) => formatLargeNumber(v)} contentStyle={{ background:"#1F2937", border:"1px solid #374151", borderRadius:12 }} itemStyle={{ color:"#F9FAFB" }} labelStyle={{ color:"#94A3B8" }}/>
+                      <Tooltip formatter={(v: number | string) => formatLargeNumber(Number(v))} contentStyle={{ background:"#1F2937", border:"1px solid #374151", borderRadius:12 }} itemStyle={{ color:"#F9FAFB" }} labelStyle={{ color:"#94A3B8" }}/>
                     </PieChart>
                   </ResponsiveContainer>
                   <div className="space-y-4 min-w-[200px]">
